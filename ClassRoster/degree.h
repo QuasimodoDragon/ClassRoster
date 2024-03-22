@@ -1,3 +1,6 @@
 #pragma once
 
-enum DegreeProgram {SECURITY, NETWORK, SOFTWARE};
+class Degree {
+	public:
+		enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
+};
