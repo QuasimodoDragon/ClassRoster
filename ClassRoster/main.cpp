@@ -2,7 +2,11 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello World!\n";
+    // test code
+    Student taylor;
+    taylor.setStudentID(12);
+
+    std::cout << taylor.getStudentID();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
