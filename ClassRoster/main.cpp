@@ -4,9 +4,29 @@
 int main() {
     // test code
     Student taylor;
-    taylor.setStudentID(12);
 
-    std::cout << taylor.getStudentID();
+    taylor.setStudentID(42069);
+    std::cout << taylor.getStudentID() << '\n';
+
+    taylor.setFirstName("Taylor");
+    std::cout << taylor.getFirstName() << '\n';
+
+    taylor.setLastName("Bailey");
+    std::cout << taylor.getLastName() << '\n';
+
+    taylor.setEmail("josh@yahoo.boy");
+    std::cout << taylor.getEmail() << '\n';
+
+    taylor.setAge(4000);
+    std::cout << taylor.getAge() << '\n';
+
+    taylor.setDaysToComplete(12, 13, 43);
+    std::cout << taylor.getDaysToComplete() << '\n';
+
+    taylor.setDegree("Piss");
+    std::cout << taylor.getDegree() << '\n';
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
