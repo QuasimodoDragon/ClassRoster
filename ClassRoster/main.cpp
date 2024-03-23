@@ -3,9 +3,11 @@
 
 int main() {
     // test code
-    Student taylor;
+    int daysToCompletion[] = { 13, 15, 43 };
 
-    taylor.setStudentID(42069);
+    Student taylor(42069, "Taylor", "Bailey", "josh@zig.co", 42, daysToCompletion, "Piss");
+
+    /*taylor.setStudentID(42069);
     std::cout << taylor.getStudentID() << '\n';
 
     taylor.setFirstName("Taylor");
@@ -24,7 +26,9 @@ int main() {
     std::cout << taylor.getDaysToComplete() << '\n';
 
     taylor.setDegree("Piss");
-    std::cout << taylor.getDegree() << '\n';
+    std::cout << taylor.getDegree() << '\n';*/
+
+    std::cout << taylor.getDaysToComplete();
 
     return 0;
 }

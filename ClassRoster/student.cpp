@@ -2,6 +2,20 @@
 #include <iostream>
 #include <string>
 
+Student::Student(int ID, std::string nameFirst, std::string nameLast, std::string emailAddress, int studentAge, int daysToCompleteClass[], std::string degreeProgram) {
+	studentID = ID;
+	firstName = nameFirst;
+	lastName = nameLast;
+	email = emailAddress;
+	age = studentAge;
+	
+	for (int i = 0; i < 3; i++) {
+		daysToComplete[i] = daysToCompleteClass[i];
+	}
+
+	degree = degreeProgram;
+}
+
 int Student::getStudentID() const {
 	return studentID;
 }
