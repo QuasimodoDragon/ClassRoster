@@ -1,6 +1,7 @@
 #pragma once
+#include <string>
 
-class Degree {
-	public:
-		enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
-};
+enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
+
+// Allows enum DegreeProgram entries to be retrieved as strings
+const std::string degreeProgramString[] = { "SECURITY", "NETWORK", "SOFTWARE" };

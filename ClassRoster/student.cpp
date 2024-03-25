@@ -2,7 +2,19 @@
 #include <iostream>
 #include <string>
 
-Student::Student(int ID, std::string nameFirst, std::string nameLast, std::string emailAddress, int studentAge, int daysToCompleteClass[], std::string degreeProgram) {
+// Default constructor
+Student::Student() {
+	this->studentID = "";
+	this->firstName = "";
+	this->lastName = "";
+	this->email = "";
+	this->age = 0;
+	this->daysToComplete[3] = { 0 };
+	this->degree = DegreeProgram::SECURITY;
+};
+
+// Full attribute constructor
+Student::Student(std::string ID, std::string nameFirst, std::string nameLast, std::string emailAddress, int studentAge, int daysToCompleteClass[], DegreeProgram degreeProgram) {
 	studentID = ID;
 	firstName = nameFirst;
 	lastName = nameLast;
@@ -16,11 +28,11 @@ Student::Student(int ID, std::string nameFirst, std::string nameLast, std::strin
 	degree = degreeProgram;
 }
 
-int Student::getStudentID() const {
+std::string Student::getStudentID() const {
 	return studentID;
 }
 
-void Student::setStudentID(int ID) {
+void Student::setStudentID(std::string ID) {
 	studentID = ID;
 }
 
@@ -55,7 +67,11 @@ void Student::setAge(int studentAge) {
 	age = studentAge;
 }
 
-std::string Student::getDaysToComplete() const {
+std::string Student::getDaysToComplete(int classPosition) {
+	return std::to_string(daysToComplete[classPosition]);
+
+	// Old code
+	/*
 	std::string text;
 	
 	for (int i = 0; i < 3; i++) {
@@ -67,18 +83,30 @@ std::string Student::getDaysToComplete() const {
 	}
 
 	return text;
+	*/
 }
 
-void Student::setDaysToComplete(int num1, int num2, int num3) {
-	daysToComplete[0] = num1;
+void Student::setDaysToComplete(int classPosition, int days) {
+	// Old code
+	/*daysToComplete[0] = num1;
 	daysToComplete[1] = num2;
-	daysToComplete[2] = num3;
+	daysToComplete[2] = num3;*/
 }
 
 std::string Student::getDegree() const {
-	return degree;
+	// Old code
+	//return degree;
 }
 
-void Student::setDegree(std::string degreeProgram) {
-	degree = degreeProgram;
+void Student::setDegree(DegreeProgram degree) {
+	// Old code
+	//degree = degreeProgram;
 }
+
+void printHeader() {
+	
+};
+
+void print() {
+	
+};
