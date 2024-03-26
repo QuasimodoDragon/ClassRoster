@@ -8,7 +8,7 @@ class Student {
 		// Default constructor
 		Student();
 		// Constructor with parameters for each class variable
-		Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysToComplete[], DegreeProgram degree);
+		Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree);
 
 		// Getters and setters for each class attribute
 		std::string getStudentID() const;

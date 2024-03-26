@@ -16,15 +16,15 @@ Student::Student() {
 };
 
 // Full attribute constructor
-Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysToComplete[], DegreeProgram degree) {
+Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree) {
 	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->email = email;
 	this->age = age;
-	for (int i = 0; i < 3; i++) {
-		this->daysToComplete[i] = daysToComplete[i];
-	}
+	this->daysToComplete[0] = daysToComplete1;
+	this->daysToComplete[1] = daysToComplete2;
+	this->daysToComplete[2] = daysToComplete3;
 	this->degree = degree;
 }
 
