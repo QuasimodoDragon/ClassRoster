@@ -11,11 +11,11 @@ int main() {
         "A5,Kevin,Bailey,kbai350@wgu.edu,30,15,20,16,SOFTWARE"
     };*/
 
-    int daysComplete[] = { 3,4,5 };
-    Student bailey;
+    // Test code
+    int daysInClass[] = { 23,33,41 };
+    Student bailey("A5", "Kevin", "Bailey", "kbai350@wgu.edu", 30, daysInClass, SOFTWARE);
 
-    bailey.setDaysToComplete(1, 2, 3);
-    std::cout << bailey.getDaysToComplete(1);
+    bailey.print();
 
     return 0;
 }
