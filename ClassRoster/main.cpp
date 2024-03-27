@@ -1,6 +1,8 @@
 #include "student.h"
+#include "roster.h"
 #include <iostream>
 
+// TEST PARSE FUNCTION FOR ROSTER CLASS
 void parse(std::string dataRow) {
 	// Variables to store parsed data to pass to add method
 	std::string studentID;
@@ -8,19 +10,23 @@ void parse(std::string dataRow) {
 	std::string lastName;
 	std::string email;
 	int age;
-	int daysToComplete[3];
+	int daysInCourse1;
+	int daysInCourse2;
+	int daysInCourse3;
 	DegreeProgram degree;
 
 	// Stores the passed data string to be parsed
 	std::string dataText = dataRow;
 
-	for (int i = 0; i < 7; i++) {
-		int comma1;
-		int comma2;
+	int comma1;
+	int comma2;
 
-		comma1 = dataText.find(',');
-		std::cout << comma1;
-	}
+	comma1 = dataText.find(',');
+	studentID = dataText.substr(0, comma1 - 0);
+	std::cout << studentID << '\n';
+
+	comma2 = dataText.find(',' + 1);
+	std::cout << comma2;
 }
 
 int main() {
