@@ -28,7 +28,7 @@ class Student {
 
 		// Print methods
 		// Prints data table header
-		void printHeader();
+		static void printHeader();
 		// Prints student data for this instance
 		void print();
 

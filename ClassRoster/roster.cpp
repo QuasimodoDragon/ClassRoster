@@ -69,15 +69,13 @@ void Roster::parse(std::string dataRow) {
 }
 
 void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
-	classRosterArray[lastStudentIndex++] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
+	classRosterArray[++lastStudentIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
 }
 
-
-// This function breaks program when called. The index swapping is the culprit
 void Roster::remove(std::string studentID) {
 	bool found = false;
 
-	for (int i = 0; i < Roster::lastStudentIndex; i++) {
+	for (int i = 0; i <= Roster::lastStudentIndex; i++) {
 		if (classRosterArray[i]->getStudentID() == studentID) {
 			found = true;
 
@@ -97,6 +95,35 @@ void Roster::remove(std::string studentID) {
 		std::cout << "The student was removed." << '\n';
 	}
 	else if (!found) {
+		std::cout << "The student with the ID: " << studentID << " Was not found." << '\n';
+	}
+}
+
+void Roster::printAll() {
+	Student::printHeader();
+
+	for (int i = 0; i <= Roster::lastStudentIndex; i++) {
+		classRosterArray[i]->print();
+	}
+}
+
+void Roster::printAverageDaysInCourse(std::string studentID) {
+	bool found = false;
+	
+	for (int i = 0; i <= Roster::lastStudentIndex; i++) {
+		if (classRosterArray[i]->getStudentID() == studentID) {
+			found = true;
+
+			int class1 = std::stoi(classRosterArray[i]->getDaysToComplete(0));
+			int class2 = std::stoi(classRosterArray[i]->getDaysToComplete(1));
+			int class3 = std::stoi(classRosterArray[i]->getDaysToComplete(2));
+
+			int average = (class1 + class2 + class3) / 3;
+			std::cout << average << '\n';
+		}
+	}
+
+	if (!found) {
 		std::cout << "The student with the ID: " << studentID << " Was not found." << '\n';
 	}
 }

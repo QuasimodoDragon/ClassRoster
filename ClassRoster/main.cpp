@@ -17,6 +17,10 @@ int main() {
     Roster roster;
 
     roster.parse("A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY");
+    roster.parse("A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK");
+    roster.printAll();
+    roster.printAverageDaysInCourse("A3");
+    roster.remove("A3");
 
     return 0;
 }
