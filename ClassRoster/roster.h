@@ -18,5 +18,7 @@ class Roster {
 
 	private:
 		// There are 5 students in the student table so this array doesn't need to be dynamic
-		Student* classRosterArray[5];
+		const static int numStudents = 5;
+		int lastStudentIndex = -1;
+		Student* classRosterArray[numStudents];
 };
