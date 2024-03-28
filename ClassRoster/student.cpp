@@ -16,7 +16,17 @@ Student::Student() {
 };
 
 // Full attribute constructor
-Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int daysToComplete1, int daysToComplete2, int daysToComplete3, DegreeProgram degree) {
+Student::Student(
+	std::string studentID, 
+	std::string firstName, 
+	std::string lastName, 
+	std::string email, 
+	int age, 
+	int daysToComplete1, 
+	int daysToComplete2, 
+	int daysToComplete3, 
+	DegreeProgram degree
+) {
 	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;

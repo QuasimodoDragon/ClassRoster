@@ -68,28 +68,52 @@ void Roster::parse(std::string dataRow) {
 	add(studentID, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, degree);
 }
 
-void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
+void Roster::add(
+	std::string studentID, 
+	std::string firstName, 
+	std::string lastName, 
+	std::string emailAddress, 
+	int age, 
+	int daysInCourse1, 
+	int daysInCourse2, 
+	int daysInCourse3, 
+	DegreeProgram degreeProgram
+) {
 	classRosterArray[++lastStudentIndex] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
+	std::cout << "Last student Index after adding: " << lastStudentIndex << '\n';
 }
 
+// breaks program if called twice
 void Roster::remove(std::string studentID) {
 	bool found = false;
+	std::cout << "Before for loop" << '\n';
 
 	for (int i = 0; i <= Roster::lastStudentIndex; i++) {
+		std::cout << "In for loop" << '\n';
 		if (classRosterArray[i]->getStudentID() == studentID) {
+			std::cout << "In for loop if statement" << '\n';
 			found = true;
 
 			// If the object found is not the last item in the classRosterArray it will swap places with the next student object in the array
 			if (i < numStudents - 1) {
+				std::cout << "Before Student* temp = classRosterArray[i];" << '\n';
 				Student* temp = classRosterArray[i];
+				std::cout << "Before classRosterArray[i] = classRosterArray[numStudents - 1];" << '\n';
 				classRosterArray[i] = classRosterArray[numStudents - 1];
+				std::cout << "Before classRosterArray[numStudents - 1] = temp;" << '\n';
 				classRosterArray[numStudents - 1] = temp;
+				std::cout << "End of nested if" << '\n';
 			}
 
 			// This decrements the number of visible student objects in the classRosterArray to hide the removed student object
+			std::cout << "Before Roster::lastStudentIndex--;" << '\n';
 			Roster::lastStudentIndex--;
+			std::cout << "Last student index after removing: " << lastStudentIndex << '\n';
+			break;
 		}
 	}
+
+	std::cout << "Last student index after removing and leaving for loop: " << lastStudentIndex << '\n';
 
 	if (found) {
 		std::cout << "The student was removed." << '\n';
