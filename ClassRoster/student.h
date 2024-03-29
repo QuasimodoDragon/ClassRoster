@@ -42,6 +42,9 @@ class Student {
 		// Prints student data for this instance
 		void print();
 
+		//Destructor
+		~Student();
+
 	private:
 		std::string studentID;
 		std::string firstName;

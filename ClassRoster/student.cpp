@@ -95,7 +95,7 @@ void Student::setDegree(DegreeProgram degree) {
 
 // Prints the table header for the student data table
 void Student::printHeader() {
-	std::cout << "Format: ID|First Name|Last Name|Email|Age|Days in Course|Degree Program" << '\n';
+	std::cout << "Format: ID | First Name | Last Name | Email | Age | Days in Course | Degree Program" << '\n';
 };
 
 // Prints a tab separated table for the student data
@@ -110,3 +110,6 @@ void Student::print() {
 	std::cout << this->daysToComplete[2] << '\t';
 	std::cout << degreeProgramString[this->degree] << '\n';
 };
+
+// Destructor does default actions
+Student::~Student() {}

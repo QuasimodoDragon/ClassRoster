@@ -161,3 +161,12 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 		}
 	}
 }
+
+// Since the roster creates student objects dynamically the desctructor needs to loop through the classRosterArray and delete them manually
+Roster::~Roster() {
+	for (int i = 0; i < numStudents; i++) {
+		// The desctructor deletes the student object and adds a nullptr in it's place
+		delete classRosterArray[i];
+		classRosterArray[i] = nullptr;
+	}
+}

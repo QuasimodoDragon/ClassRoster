@@ -5,6 +5,7 @@
 
 int main() {
 
+    // Prints personal information
     std::cout << "Scripting and Programming: Applications - C867" << '\n';
     std::cout << "Language: C++" << '\n';
     std::cout << "Student ID: 011012738" << '\n';

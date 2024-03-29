@@ -25,6 +25,8 @@ class Roster {
 		// Prints student emails with invalid format
 		void printInvalidEmails();
 		void printByDegreeProgram(DegreeProgram degreeProgram);
+		// Destructor for dynamically created students
+		~Roster();
 
 	private:
 		const static int numStudents = 5;
