@@ -38,6 +38,7 @@ Student::Student(
 	this->degree = degree;
 }
 
+// Getters and setters for each Student variable
 std::string Student::getStudentID() const {
 	return studentID;
 }
@@ -98,7 +99,7 @@ void Student::printHeader() {
 	std::cout << "Format: ID | First Name | Last Name | Email | Age | Days in Course | Degree Program" << '\n';
 };
 
-// Prints a tab separated table for the student data
+// Prints a tab separated table of the student data
 void Student::print() {
 	std::cout << this->studentID << '\t';
 	std::cout << this->firstName << '\t';
