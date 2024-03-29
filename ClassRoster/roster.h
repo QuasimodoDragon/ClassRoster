@@ -27,8 +27,11 @@ class Roster {
 		void printByDegreeProgram(DegreeProgram degreeProgram);
 
 	private:
-		// There are 5 students in the student table so this array doesn't need to be dynamic
 		const static int numStudents = 5;
+		// This keeps track of how many students are in the classRosterArray. It is dynamic and will increment or decrement if a student is added or removed
 		int lastStudentIndex = -1;
+		
+	public:
+		// This is made public so we can access it in the main function and more easily access each students information
 		Student* classRosterArray[numStudents];
 };

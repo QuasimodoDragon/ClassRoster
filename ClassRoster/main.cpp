@@ -5,6 +5,12 @@
 
 int main() {
 
+    std::cout << "Scripting and Programming: Applications - C867" << '\n';
+    std::cout << "Language: C++" << '\n';
+    std::cout << "Student ID: 011012738" << '\n';
+    std::cout << "Kevin Bailey" << '\n';
+    std::cout << '\n';
+
     const std::string studentData[] = {
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -15,12 +21,36 @@ int main() {
 
     Roster classRoster;
 
+    // Adds all of the studentData strings and parses them to be created as Student objects and added to the classRoster Roster
     for (std::string student : studentData) {
         classRoster.parse(student);
     }
 
     classRoster.printAll();
+    std::cout << '\n';
+
     classRoster.printInvalidEmails();
+    std::cout << '\n';
+
+    // Prints the average days in courses for each student in classRoster
+    for (int i = 0; i < 5; i++) {
+        std::string studentID = classRoster.classRosterArray[i]->getStudentID();
+        classRoster.printAverageDaysInCourse(studentID);
+    }
+    std::cout << '\n';
+
+    classRoster.printByDegreeProgram(SOFTWARE);
+    std::cout << '\n';
+
+    classRoster.remove("A3");
+    std::cout << '\n';
+
+    classRoster.printAll();
+    std::cout << '\n';
+
+    // This should give a message saying A3 was not found because we deleted it earlier
+    classRoster.remove("A3");
+    std::cout << '\n';
 
     return 0;
 }

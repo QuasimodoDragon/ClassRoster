@@ -93,10 +93,12 @@ void Student::setDegree(DegreeProgram degree) {
 	this->degree = degree;
 }
 
+// Prints the table header for the student data table
 void Student::printHeader() {
 	std::cout << "Format: ID|First Name|Last Name|Email|Age|Days in Course|Degree Program" << '\n';
 };
 
+// Prints a tab separated table for the student data
 void Student::print() {
 	std::cout << this->studentID << '\t';
 	std::cout << this->firstName << '\t';
